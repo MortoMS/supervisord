@@ -1,0 +1,22 @@
+{
+    "name": "dbseller/supervisord",
+    "description": "SDK para integracao com o XML-RPC supervisor",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DBSeller\\Supervisord\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel Senna",
+            "email": "msgabrielrafael@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+        "ext-curl": "*",
+        "ext-xmlrpc": "*"
+    }
+}
