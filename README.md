@@ -33,7 +33,11 @@ try {
     
     var_dump($result); // Retorno do chamado do metodo
 } catch (InvalidArgumentException $e) {
-    echo $e->getMessage(); // Falha no argumento
+    echo $e->faultCode; // Codigo de falha do argumento
+    echo $e->faultString; // Messagem da falha do argumento
+
+    echo $e->getCode(); // Codigo de falha do argumento
+    echo $e->getMessage(); // Messagem da falha do argumento
 } catch (ConnectionException $e) {
     echo $e->getMessage(); // Falha na conexao com o supervisord
 } catch (Exception $e) {
