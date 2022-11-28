@@ -2,8 +2,8 @@
 
 require_once 'vendor/autoload.php';
 
-use DBSeller\Supervisord\Client;
-use DBSeller\Supervisord\HTTPConnection;
+use AbismoStudios\Supervisord\Client;
+use AbismoStudios\Supervisord\HTTPConnection;
 
 $connection = new HTTPConnection('localhost', 'admin', 'secret');
 $client     = new Client($connection);

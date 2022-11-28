@@ -1,8 +1,8 @@
 <?php
 
-namespace DBSeller\Supervisord;
+namespace AbismoStudios\Supervisord;
 
-use DBSeller\Supervisord\Interfaces\Connection;
+use AbismoStudios\Supervisord\Interfaces\Connection;
 
 class HTTPConnection implements Connection
 {
