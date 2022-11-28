@@ -7,6 +7,6 @@ use AbismoStudios\Supervisord\HTTPConnection;
 
 $connection = new HTTPConnection('localhost', 'admin', 'secret');
 $client     = new Client($connection);
-$result     = $client->addProcessGroup('mortinho');
+$result     = $client->listMethods();
 
 var_dump($result);
