@@ -105,9 +105,14 @@ class Client
         return $data;
     }
 
-    public function addProcessGroup()
+    /**
+     * Descrição
+     *
+     * @return int
+     */
+    public function addProcessGroup($name)
     {
-        return $this->call('supervisor.addProcessGroup');
+        return $this->call('supervisor.addProcessGroup', [$name]);
     }
 
     /**
