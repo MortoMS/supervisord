@@ -7,6 +7,6 @@ use DBSeller\Supervisord\HTTPConnection;
 
 $connection = new HTTPConnection('localhost', 'admin', 'secret');
 $client     = new Client($connection);
-$result     = $client->listMethods();
+$result     = $client->addProcessGroup();
 
-var_dump($result[0]);
+var_dump($result);

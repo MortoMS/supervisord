@@ -10,14 +10,14 @@ use Exception;
 class Client
 {
     /**
-     * Base de conexao com o supervisord
+     * Base de conexão com o Supervisord
      *
      * @var HTTPConnection $connection
      */
     private $connection;
 
     /**
-     * Opcoes default para connection
+     * Opcões default para a conexão ('connection').
      * 
      * @var array<int,mixed> $optionsDefault
      */
@@ -46,7 +46,7 @@ class Client
     }
 
     /**
-     * Cria uma nova requisicao para o Curl
+     * Cria uma nova requisição para o Curl
      *
      * @return void
      */
@@ -58,11 +58,11 @@ class Client
     }
 
     /**
-     * Faz uma chamada para o supervisord e 
-     * retorna o resultado do mesmo
+     * Faz uma chamada para o Supervisord e
+     * retorna o seu resultado.
      *
-     * @param string $method metodo a ser chamado no supervisord
-     * @param mixed $params Parametro para o metodo a ser chamado
+     * @param string $method Método a ser chamado no Supervisord.
+     * @param mixed $params Parâmetro para o método a ser chamado.
      * 
      * @throws Exception
      *
@@ -92,7 +92,7 @@ class Client
     }
 
     /**
-     * Limpa todos os log de processo
+     * Limpa todos os log de processo.
      * 
      * @return array<mixed>
      */
@@ -117,7 +117,7 @@ class Client
     }
 
     /**
-     * Retorna a versao da API
+     * Retorna a versão da API
      *
      * @return string
      */
@@ -141,6 +141,11 @@ class Client
         return $this->call('supervisor.getIdentification');
     }
 
+    /**
+     * Explicação
+     *
+     * @return int
+     */
     public function getPID()
     {
         return $this->call('supervisor.getPID');
