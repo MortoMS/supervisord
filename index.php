@@ -5,8 +5,19 @@ require_once 'vendor/autoload.php';
 use AbismoStudios\Supervisord\Client;
 use AbismoStudios\Supervisord\HTTPConnection;
 
-$connection = new HTTPConnection('localhost', 'admin', 'secret');
-$client     = new Client($connection);
-$result     = $client->listMethods();
+use AbismoStudios\Supervisord\Exceptions\InvalidArgumentException;
+use AbismoStudios\Supervisord\Exceptions\ConnectionException;
 
-var_dump($result);
+try {
+    $connection = new HTTPConnection('localhost', 'admin', 'secret');
+    $client     = new Client($connection);
+    $result     = $client->listMethods();
+    
+    var_dump($result);
+} catch (InvalidArgumentException $e) {
+    echo $e->getMessage();
+} catch (ConnectionException $e) {
+    echo $e->getMessage();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
