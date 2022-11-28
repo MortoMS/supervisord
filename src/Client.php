@@ -5,7 +5,8 @@ namespace AbismoStudios\Supervisord;
 use AbismoStudios\Supervisord\HTTPConnection;
 use AbismoStudios\Supervisord\Interfaces\Connection;
 
-use Exception;
+use AbismoStudios\Supervisord\Exceptions\ConnectionException;
+use AbismoStudios\Supervisord\Exceptions\InvalidArgumentException;
 
 class Client
 {
@@ -38,7 +39,7 @@ class Client
         $this->connection = $connection;
 
         if (!($this->connection instanceof Connection)) {
-            throw new Exception(
+            throw new ConnectionException(
                 'O argumento connection e invalido para a' .
                 ' operacao de conexao com o supervisord'
             );
@@ -64,7 +65,7 @@ class Client
      * @param string $method metodo a ser chamado no supervisord
      * @param mixed $params Parametro para o metodo a ser chamado
      * 
-     * @throws Exception
+     * @throws ConnectionException
      *
      * @return mixed
      */
@@ -80,10 +81,28 @@ class Client
         );
 
         if (!$result = curl_exec($this->ch)) {
-            throw new Exception('Falha na ');
+            throw new ConnectionException('Ocorreu um erro na conexao com o supervisord: ' . curl_error($this->ch));
         }
 
-        return xmlrpc_decode($result);
+        return $this->checkResponseError(xmlrpc_decode($result));
+    }
+    
+    /**
+     * Verifica se o retorna da chamada do xmlrpc e um erro
+     *
+     * @param mixed $data Dados do retorno da chamada para o xmlrpc
+     *
+     * @throws InvalidArgumentException
+     *
+     * @return mixed 
+     */
+    private function checkResponseError($data)
+    {
+        if (is_array($data) and isset($data['faultCode']) and isset($data['faultString'])) {
+            throw new InvalidArgumentException($data);
+        }
+
+        return $data;
     }
 
     public function addProcessGroup()
