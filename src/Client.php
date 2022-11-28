@@ -1,9 +1,9 @@
 <?php
 
-namespace DBSeller\Supervisord;
+namespace AbismoStudios\Supervisord;
 
-use DBSeller\Supervisord\HTTPConnection;
-use DBSeller\Supervisord\Interfaces\Connection;
+use AbismoStudios\Supervisord\HTTPConnection;
+use AbismoStudios\Supervisord\Interfaces\Connection;
 
 use Exception;
 

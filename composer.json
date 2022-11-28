@@ -1,11 +1,11 @@
 {
-    "name": "dbseller/supervisord",
+    "name": "abismostudios/supervisord",
     "description": "SDK para integracao com o XML-RPC supervisor",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "DBSeller\\Supervisord\\": "src/"
+            "AbismoStudios\\Supervisord\\": "src/"
         }
     },
     "authors": [

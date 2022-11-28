@@ -1,6 +1,6 @@
 <?php
 
-namespace DBSeller\Supervisord\Interfaces;
+namespace AbismoStudios\Supervisord\Interfaces;
 
 interface Connection
 {
