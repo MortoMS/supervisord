@@ -50,7 +50,7 @@ class HTTPConnection implements Connection
 
     public function __construct($host, $username = '', $password = '')
     {
-        $this->host      = $host;
+        $this->host     = $host;
         $this->username = $username;
         $this->password = $password;
     }

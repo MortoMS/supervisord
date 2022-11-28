@@ -43,11 +43,6 @@ class Client
                 ' operacao de conexao com o supervisord'
             );
         }
-
-        $data = $this->multicall([
-            'supervisor.getPID'
-        ]);
-        var_dump($data);
     }
 
     /**
