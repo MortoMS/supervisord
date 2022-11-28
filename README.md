@@ -1,7 +1,7 @@
 ## About PHP - Supervisord XMLRPC
 
 Esse projeto serve como uma ponte para facilitar a conexão via XMLRPC com o [Supervisord](http://supervisord.org) 
-utilizando pacotes do próprio php para fazer essa conexão.
+utilizando pacotes do próprio PHP para fazer essa conexão.
 
 ### Requirements
 
@@ -47,7 +47,7 @@ try {
 
 ### Settings Supervisord
 
-Adicionar a opções de configuração no arquivo de configuração do Supervisord.
+Adicionar as opções de configurações no arquivo de configuração do Supervisord.
 
 O arquivo geralmente está no local ’/etc/supervisor/supervisord.conf’, esse local pode variar de implementação.
 
