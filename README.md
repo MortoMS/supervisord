@@ -62,4 +62,4 @@ port=127.0.0.1:9001
 
 ### Author / Dev
 [Gabriel Senna - Abismo Studios](https://abismostudios.com/)<br>
-[Nicolas Lucio - Abismo Studios](https://abismostudios.com/)
+[Nícolas Lúcio - Abismo Studios](https://abismostudios.com/)
